@@ -1,2 +1,0 @@
-## [Paginate]()
- - [Getting Started](start)
