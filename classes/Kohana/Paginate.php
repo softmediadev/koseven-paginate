@@ -143,6 +143,14 @@ abstract class Kohana_Paginate
 	 * @var		NULL
 	 */
 	protected $_result;
+
+	/**
+	 * Database name
+	 *
+	 * @access    protected
+	 * @var        NULL
+	 */
+	protected $_db = NULL;
 	
 	/**
 	 * Initialize
@@ -467,8 +475,10 @@ abstract class Kohana_Paginate
 	 * @param	mixed	NULL|Request
 	 * @return	$this
 	 */
-	public function execute()
+	public function execute($db = NULL)
 	{
+		$this->_db = $db;
+
 		if ($this->_search_query !== NULL)
 			$this->_search($this->_search_query);
 
